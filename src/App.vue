@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  <div class="container">
+    <div class="container">
     <!-- Navigation -->
     <section class="nav">
       <header class="top_bar">
@@ -20,19 +20,19 @@
         </nav>
       </header>
     </section>
-
     <!-- Search Bar  -->
     <section>
         <input type="text" class="search">
         <button class="btn search_area" type="submit">Search</button>
       </section>
-  </div>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'app'
+  name: 'app',
 }
 </script>
 
