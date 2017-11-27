@@ -34,9 +34,7 @@
     name: 'app',
     data () {
       return {
-        msg: 'Movie App',
         type: this.$route.params.type,
-        movie: [],
         errors: [],
       }
     },
