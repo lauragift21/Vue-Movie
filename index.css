@@ -40,12 +40,12 @@
   }
 
   /*Search Area*/
-  .wrapper {
+  /* .wrapper {
     background: #263238;
-  }
+  } */
   .search {
     width: 40%;
-    height: 5%;
+    height: 4em;
     text-align: center;
     font-size: 14px;
     color: #333;

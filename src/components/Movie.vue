@@ -1,8 +1,13 @@
 <template>
      <!-- Search Bar  -->
       <section class="wrapper">
-          <input type="text" class="search" v-model="query" @keyup.enter="movie" @blur="movie" placeholder="Search for movie">
-          <button class="btn search_area" type="submit">Search</button>
+          <input 
+            type="search" 
+            class="search" 
+            v-model="query" 
+            placeholder="Search for movie"
+          >
+          <button class="btn search_area" @click="searchMovie">Search</button>
       </section>
       </div>
 </template>
@@ -13,7 +18,11 @@
     data() {
       return {
         query: '',
-        movie: ''
+      }
+    },
+    methods: {
+      searchMovie(e) {
+        console.log(this.query);
       }
     },
     created() {
