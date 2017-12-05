@@ -37,8 +37,9 @@
         type: this.$route.params.type,
       }
     },
-    components: {
-      Movie
+    components: { 
+      Movie, 
+      Popular
     }
 
 
