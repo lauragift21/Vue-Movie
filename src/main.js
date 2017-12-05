@@ -6,17 +6,14 @@ Vue.use(VueRouter)
 import App from './App.vue'
 import Movie from './components/Movie'
 import Popular from './components/Popular'
+import Rated from './components/Rated'
 
-
+//TODO: move this route into a different file and separate the paths.
 const routes = [
-  {
-    path: 'data/:type',
-    components: {
-      default: Movie,
-      a: Popular,
-      // b: TopRated
-    } 
-  }
+  { path: '/', component: Movie },
+  { path: '/popular', component: Popular },
+  { path: '/top-rated', component: Rated } 
+
 ]
 
 const router = new VueRouter ({

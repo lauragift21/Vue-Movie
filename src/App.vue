@@ -20,8 +20,9 @@
       </section>
 
       <Movie></Movie>
+
  
-  <router-view></router-view> 
+  <router-view></router-view>   
 
   </div>
 </template>
@@ -30,6 +31,7 @@
   import axios from 'axios'
   import Popular from './components/Popular'
   import Movie from './components/Movie'
+  import Rated from './components/Rated'
   export default {
     name: 'app',
     data () {
@@ -39,7 +41,8 @@
     },
     components: { 
       Movie, 
-      Popular
+      Popular,
+      Rated
     }
 
 

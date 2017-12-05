@@ -38,12 +38,10 @@
     text-decoration: none;
     text-align: justify;
     padding: 14px 12px;
+    color: #ffffff;
   }
 
   /*Search Area*/
-  /* .wrapper {
-    background: #263238;
-  } */
   .search {
     width: 40%;
     height: 4em;
