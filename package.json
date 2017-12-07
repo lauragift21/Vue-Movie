@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "lodash": "^4.17.4",
+    "v-img": "^0.1.9",
     "vue": "^2.4.4",
     "vue-router": "^3.0.1",
     "vue-sweetalert2": "^1.0.7"

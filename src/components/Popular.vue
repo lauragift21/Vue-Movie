@@ -1,27 +1,21 @@
 <template>
-	<div class="col-md-12">
-		<div class="col-md-4">
-			<div class="card">
-				<div class="card-title">
-					{{search.title}}
-				</div>
-				<div class="card-details">
 
-				</div>
-			</div>
+	<div class="card-title">
+		<div class="box" v-for="(popular, index) in result" :popular="popular">
+			<p style="color:#000">{{popular.title}}</p>
+
 		</div>
-	</div>  
+
+	</div> 
 </template>
 
 <script>
 	import axios from 'axios'
-	import Movie from './Movie'
 
   export default {
 		data() {
 			return {
 				result: [],
-				popular: []
 			}
 		},
 		created() {
@@ -34,7 +28,5 @@
 				})
 				console.log('success');
 			}
-			
-
     }
 </script>

@@ -10,7 +10,7 @@ import Rated from './components/Rated'
 
 //TODO: move this route into a different file and separate the paths.
 const routes = [
-  { path: '/', component: Movie },
+  { path: '/search:query', component: Movie },
   { path: '/popular', component: Popular },
   { path: '/top-rated', component: Rated } 
 
