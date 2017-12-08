@@ -77,13 +77,14 @@
 
   
   .result {
-    margin-top: 30%;
+    margin-top: 25%;
   }
   .card {
     margin: 20px;
     padding: 12px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
   }
   .movie {
     cursor: pointer;
@@ -97,6 +98,10 @@
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     transform: translateZ(0);
     background: #ffffff;
+  }
+
+  .no-img {
+    height: 3px;
   }
 
   .img {
