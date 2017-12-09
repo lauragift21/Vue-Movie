@@ -80,9 +80,6 @@
   }
 
   /* Movie List */
-  /* .result {
-    margin: 5px;
-  } */
   .card {
     margin: 12px;
     padding: 12px;
@@ -96,6 +93,12 @@
     /* border: 2px #222 solid; */
     padding: 20px;
     margin: 20px;
+  }
+  .movie-date {
+    font-size: 11px;
+    color: #333;
+    font-style: italic;
+    margin-top: 7px;
   }
 
   /* Media Queries */

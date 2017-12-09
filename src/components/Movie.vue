@@ -22,8 +22,8 @@
               {{ movie.title }}            
             </h4>
           </div>
-          <div class="movie__date">
-            <p style="color: #333; font-size: 12px">{{ movie.release_date}}</p>            
+          <div>
+            <p class="movie-date">{{ movie.release_date | formatDate}}</p>            
           </div>
         </div>
         </div>
@@ -34,7 +34,7 @@
 
 <script>
   import axios from 'axios'
-  import _ from 'lodash'
+  import moment from 'moment'
   
   export default {
     prop: ['movie'],
@@ -50,12 +50,19 @@
       searchMovie(e) {
         const api = `https://api.themoviedb.org/3/search/movie?api_key=8e3003c0c81633dc53b9d15ffa3399e1&language=en-US&query=${this.query}&page=1&include_adult=false`;
         axios.get(api).then(response => {
-          this.movies = response.data.results;          
+          this.movies = response.data.results      
         })
         .catch (e => {
           this.error = 'No response data'
         });
       },
     },
+    filters: {
+      formatDate(value) {
+        if(value){
+          return moment(String(value)).format('MMM YYYY')
+        }
+      }
+    }
   }
 </script>
