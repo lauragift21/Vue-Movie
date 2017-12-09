@@ -3,12 +3,13 @@
   <section class="movie-search">
     <div class="text-field">
       <input type="text" class="search" 
-      v-model.trim="query"
-      @keyup.enter="searchMovie" 
-      placeholder="Search for movie"
+        v-model.trim="query"
+        @keyup.enter="searchMovie" 
+        placeholder="Search for movie"
       />
       <button class="btn search_area" @click="searchMovie">Search</button>     
     </div>
+    <!-- Movie Results -->
     <div class="result">
       <div class="card">
         <div class="movie" v-for="movie in movies" :key="movie.id">
@@ -45,8 +46,6 @@
         url: 'http://image.tmdb.org/t/p/w185//'
       }
     },
-    computed: {
-    },
     methods: {
       searchMovie(e) {
         const api = `https://api.themoviedb.org/3/search/movie?api_key=8e3003c0c81633dc53b9d15ffa3399e1&language=en-US&query=${this.query}&page=1&include_adult=false`;
@@ -56,7 +55,7 @@
         .catch (e => {
           this.error = 'No response data'
         });
-      }
+      },
     },
   }
 </script>
