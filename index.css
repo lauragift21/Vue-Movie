@@ -80,20 +80,20 @@
   }
 
   /* Movie List */
-  .result {
+  /* .result {
     margin: 5px;
-  }
+  } */
   .card {
-    margin: 20px;
+    margin: 12px;
     padding: 12px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
   }
   .movie {
     cursor: pointer;
     border-radius: 4px; 
-    border: 2px #222 solid;
+    /* border: 2px #222 solid; */
     padding: 20px;
     margin: 20px;
   }
