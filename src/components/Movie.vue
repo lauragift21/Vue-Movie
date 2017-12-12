@@ -50,11 +50,21 @@
       searchMovie(e) {
         const api = `https://api.themoviedb.org/3/search/movie?api_key=8e3003c0c81633dc53b9d15ffa3399e1&language=en-US&query=${this.query}&page=1&include_adult=false`;
         axios.get(api).then(response => {
-          this.movies = response.data.results      
+          this.movies = response.data.results  
         })
         .catch (e => {
-          this.error = 'No response data'
+          console.log(error);
         });
+      },
+      poster() {
+        let result = this.movies;
+        if(this.result){
+          return url + this.result;
+        } else {
+          this.noImage = true;          
+        }
+          console.log(this.result);    
+        
       },
     },
     filters: {
