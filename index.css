@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
   * {
     font-family: 'Montserrat', sans-serif;  
@@ -79,6 +79,12 @@
     font-size: 14px;
   }
 
+  .no-result {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+
   /* Movie List */
   .card {
     margin: 12px;
@@ -86,6 +92,8 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
+    transition: all 200ms;
+    background-color: transparent;
   }
   .movie {
     cursor: pointer;
