@@ -18,12 +18,8 @@
              <img v-if="movie.poster_path !== null" :src="posterPath(movie.poster_path)" class="poster">
              <img v-if="movie.poster_path== null" src="../assets/noImage.png" height="270px">
           </div>
-          <div class="movie__title">
-            <h4 style="color: #333">
-              {{ movie.title }}            
-            </h4>
-          </div>
           <div>
+            <h4 class="movie-title">{{ movie.title }}</h4>
             <p class="movie-date">{{ movie.release_date | formatDate}}</p>            
           </div>
         </div>

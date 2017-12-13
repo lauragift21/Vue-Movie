@@ -10,13 +10,14 @@ import Rated from './components/Rated'
 
 //TODO: move this route into a different file and separate the paths.
 const routes = [
-  { path: '/search:query', component: Movie },
+  { path: '/', component: Movie },
   { path: '/popular', component: Popular },
   { path: '/top-rated', component: Rated } 
 
 ]
 
 const router = new VueRouter ({
+  mode: 'history',
   routes
 })
 

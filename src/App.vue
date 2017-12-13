@@ -6,7 +6,7 @@
         <nav class="nav_bar">
           <div class="nav_bar_left">
             <div class="svg">
-              <a href="/"><img src="logo.png" alt="MOVIE TRIGGERS"></a>
+              <a href="/"><img src="/assets/logo.png" alt="MOVIE TRIGGERS"></a>
             </div>
           </div>
           <div class="nav_bar_right">
@@ -18,9 +18,8 @@
         </nav>
       </header>
     </section>
-    <Movie></Movie>
-    <Popular></Popular>
-  <router-view></router-view>   
+    <router-view></router-view>   
+      
   </div>
 </template>
 
