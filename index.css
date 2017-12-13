@@ -3,17 +3,15 @@
   * {
     font-family: 'Montserrat', sans-serif;  
     text-decoration: none;
-    color: #fff;  
+    color: #eee;  
     margin: 0 auto;
     max-width: 1960px;
     }
-  
   /*Navigation Menu*/
   .nav_bar {
-
     width: auto;
     background-color: #1D1D1D;
-    padding: 30px 40px;
+    padding: 37px;
     display: block;
   }
   .nav_bar_left {
@@ -118,6 +116,11 @@
     color: #000;
     text-align: center;
     margin-top: 2rem;
+  }
+  .svg {
+    fill: #fff;
+    stroke: #95989a;
+    height: 30px;
   }
 
   /* Media Queries */

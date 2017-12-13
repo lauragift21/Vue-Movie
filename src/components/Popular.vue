@@ -29,6 +29,7 @@
 		data() {
 			return {
 				results: [],
+				noImage: false,
 				url: 'http://image.tmdb.org/t/p/w185//'
 			}
 		},
