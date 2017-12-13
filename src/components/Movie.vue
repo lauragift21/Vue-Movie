@@ -16,7 +16,7 @@
           <div class="movie__poster">
             <!-- conditionally display poster image if it exist else display default image -->
              <img v-if="movie.poster_path !== null" :src="posterPath(movie.poster_path)" class="poster">
-             <img v-if="movie.poster_path== null" src="../assets/noImage.png" height="270px">
+             <img v-if="movie.poster_path == null" src="../assets/noImage.png" height="270px">
           </div>
           <div>
             <h4 class="movie-title">{{ movie.title }}</h4>

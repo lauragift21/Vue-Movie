@@ -114,6 +114,11 @@
     font-style: italic;
     margin-top: 7px;
   }
+   .text-title {
+    color: #000;
+    text-align: center;
+    margin-top: 2rem;
+  }
 
   /* Media Queries */
   @media all and (max-width: 1690px){

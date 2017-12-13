@@ -1,15 +1,20 @@
 <template>
 <div class="result">
+	<h2 class="text-title">POPULAR MOVIES</h2> 
 	<div class="card">
-		<div class="movie" v-for="film in popular">
+		<div class="movie" v-for=" popular in results" :key="popular.id">
 			<div class="movie_poster">
-				<img :src="url + film.poster_path" alt="img">
+          <img v-if="!noImage" :src="url + popular.poster_path" alt="" class="poster">
+          <img v-if="noImage" src="src/assets/no-image.png" height="2%">  
 			</div>
 			<div class="movie__title">
 			  <h4 style="color: #333">
-          {{ film.title }}            
+          {{ popular.title }}            
         </h4>
 			</div>
+			<div>
+          <p class="movie-date">{{ popular.release_date | formatDate}}</p>            
+        </div>
 		</div>
 	</div>
 </div>
@@ -20,24 +25,41 @@
 	import moment from 'moment'
 
   export default {
-		prop: ['movie'],
+		prop: ['popular'],
 		data() {
 			return {
-				popular: [],
+				results: [],
 				url: 'http://image.tmdb.org/t/p/w185//'
 			}
 		},
+		mounted() {
+			this.getPopularMovie()
+		},
 		methods: {
-			popularMovie(e) {
-				axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=8e3003c0c81633dc53b9d15ffa3399e1&language=en-US&page=1')
-					.then(response => {
-						this.popular= response.data
-					})
-					.catch (e => {
-						this.errors.push(e)
-					})
-					console.log('success');
-				}
-			}
+			// method for quering movie api
+			getPopularMovie() {
+				let api = `https://api.themoviedb.org/3/movie/popular?api_key=8e3003c0c81633dc53b9d15ffa3399e1&language=en-US&page=1`; 
+				axios.get(api).then(response => {
+					this.results = response.data.results
+				})
+				.catch (e => {
+					console.log(error);
+				})
+			},
+			// Adding a method for posterPath
+      posterPath(posterPath) {
+          var newPath = this.url + posterPath;
+           console.log(newPath)
+          return newPath
+      },
+		},
+		filters: {
+			//  date filter for movie format
+		  formatDate(value) {
+		    if(value){
+		      return moment(String(value)).format('MMM YYYY')
+		    }
+		  }
 		}
+	}	
 </script>

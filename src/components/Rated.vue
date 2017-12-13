@@ -1,6 +1,8 @@
 <template>
 	<div class="result">
-    <h2 class="text-title">TOP RATED MOVIES</h2>    
+    <h2 class="text-title">
+      TOP RATED MOVIES
+    </h2>    
     <div class="card">
       <div class="movie" v-for="rating in ratings" :key="rating.id">
         <div class="movie__poster">
@@ -44,7 +46,13 @@
         .catch (e => {
           console.log(error);
         })
-      }
+      },
+      // Adding a method for posterPath
+      posterPath(posterPath) {
+          var newPath = this.url + posterPath;
+           console.log(newPath)
+          return newPath
+      },
     },
     filters: {
       formatDate(value) {
@@ -55,13 +63,5 @@
     }
 	}
 </script>
-
-<style>
-  .text-title {
-    color: #000;
-    text-align: center;
-    margin-top: 2rem;
-  }
-</style>
 
 
