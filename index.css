@@ -46,7 +46,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin-top: 10%;
+   margin-top: 5%;
   }
   .search {
     width: 50%;
@@ -144,3 +144,15 @@
       max-width: 960px;
     }
   }
+
+/*page transistion*/
+.pop-enter-active, .pop-leave-active {
+  transition-property: opacity;
+  transition-duration: 0.4s;
+}
+.pop-enter-active {
+  transition-delay: 0.1s;
+}
+.pop-enter, .pop-leave-active {
+  opacity: 0
+}
