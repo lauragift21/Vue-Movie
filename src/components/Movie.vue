@@ -4,7 +4,7 @@
     <div class="text-field">
       <input type="text" class="search" 
         v-model.trim="query"
-        @keyup="fetch" 
+        @keyup.enter="fetch" 
         placeholder="Search for movie"
       />
       <button class="btn search_area" @click="fetch">Search</button>     
@@ -12,18 +12,20 @@
     <!-- Movie Results -->
     <div class="result" v-show="!noMovieFound">
       <div class="card">
-        <div class="movie" v-for="movie in movies" :key="movie.id">
-          <div class="movie__poster">
-            <!-- conditionally display poster image if it exist else display default image -->
-             <img v-if="movie.poster_path !== null" :src="posterPath(movie.poster_path)" class="poster">
-             <img v-if="movie.poster_path == null" src="../assets/noImage.png" height="270px">
-          </div>
-          <div>
-            <h4 class="movie-title">{{ movie.title }}</h4>
-            <p class="movie-date">{{ movie.release_date | formatDate}}</p>            
-          </div>
+          <div class="movie" v-for="movie in movies" :key="movie.id">
+            <transition name="flip">
+              <div class="movie__poster">
+                <!-- conditionally display poster image if it exist else display default image -->
+                <img v-if="movie.poster_path !== null" :src="posterPath(movie.poster_path)" class="poster">
+                <img v-if="movie.poster_path == null" src="../assets/noImage.png" height="270px">
+              </div>
+            </transition>
+            <div>
+              <h4 class="movie-title">{{ movie.title }}</h4>
+              <p class="movie-date">{{ movie.release_date | formatDate}}</p>            
+            </div>
         </div>
-        </div>
+      </div>
       </div>
     </div>
     <div v-show="noMovieFound">
@@ -37,6 +39,7 @@
 <script>
   import axios from 'axios'
   import moment from 'moment'
+
   
   export default {
     prop: ['movie'],

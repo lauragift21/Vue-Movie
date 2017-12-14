@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VuePaginate from 'vue-paginate'
+
 
 Vue.use(VueRouter)
+Vue.use(VuePaginate)
+
 
 import App from './App.vue'
 import Movie from './components/Movie'

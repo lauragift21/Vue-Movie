@@ -10,7 +10,7 @@
   /*Navigation Menu*/
   .nav_bar {
     width: auto;
-    background-color: #1D1D1D;
+    background-color: #1d1d1d;
     padding: 37px;
     display: block;
   }
@@ -65,7 +65,7 @@
   }
 
   .btn {
-    background: #333;
+    background: #1d1d1d;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
     width: 12%;
@@ -91,7 +91,6 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
-    transition: all 200ms;
     background-color: transparent;
   }
   .movie {
@@ -100,6 +99,14 @@
     padding: 20px;
     background-color: transparent;
     margin: 20px;
+    transition: opacity 0.5s ease, transform 0.5s ease-in;
+  }
+  .movie:hover{
+  	transform: scale(1.05);
+  }
+
+  .movie__poster:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);  	
   }
 
   .movie-title {
@@ -122,6 +129,7 @@
     stroke: #95989a;
     height: 30px;
   }
+
 
   /* Media Queries */
   @media all and (max-width: 1690px){
