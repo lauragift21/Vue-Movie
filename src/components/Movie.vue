@@ -4,13 +4,9 @@
     <h1 style="color: #333; text-align: center; letter-spacing: 5px;">THE MOVIE TRIGGERS</h1>
     <p style="color: #333; text-align: center;">Search and find details of any movie.</p>
     <div class="text-field">
-      <input type="text" class="search" 
-        v-model.trim="query"
-        @keyup.enter="fetch" 
-        placeholder="Search for movie"
-
-      />
-      <!-- <button class="btn search_area" @click="fetch">Search</button>      -->
+      <input type="text" class="search" v-model.trim="query" @keyup.enter="fetch" placeholder="Search for movie..."/>
+      </div>
+      <button class="btn search_area" @click="fetch">Search</button>     
     </div>
     <!-- Movie Results -->
     <div class="result" v-show="!noMovieFound">
