@@ -11,13 +11,14 @@ import App from './App.vue'
 import Movie from './components/Movie'
 import Popular from './components/Popular'
 import Rated from './components/Rated'
+import MovieDetails from './components/MovieDetails'
 
 //TODO: move this route into a different file and separate the paths.
 const routes = [
   { path: '/', component: Movie },
+  { path: '/movie/:id/:name', component: MovieDetails },
   { path: '/popular', component: Popular },
   { path: '/top-rated', component: Rated } 
-
 ]
 
 const router = new VueRouter ({

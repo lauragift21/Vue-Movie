@@ -134,9 +134,12 @@
 
 
   /* Media Queries */
-  @media all and (max-width: 1690px){
+  @media all and (max-width: 320px){
     body {
-      max-width: 2100px;
+      width: 200px;
+    }
+    .card {
+      width: 20px;
     }
     
   }

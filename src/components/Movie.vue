@@ -2,7 +2,7 @@
   <!-- Search Bar  -->
   <section class="movie-search">
     <h1 style="color: #333; text-align: center; letter-spacing: 5px;">THE MOVIE TRIGGERS</h1>
-    <p style="color: #333; text-align: center;">Search and find details of any movie.</p>
+    <p style="color: #333; text-align: center;">Search and browse through the largest collection of movies.</p>
     <div class="text-field">
       <input type="text" class="search" v-model.trim="query" @keyup.enter="fetch" placeholder="Search for movie..."/>
       </div>
@@ -11,7 +11,7 @@
     <!-- Movie Results -->
     <div class="result" v-show="!noMovieFound">
       <div class="card">
-          <div class="movie" v-for="movie in movies" :key="movie.id">
+          <div class="movie" v-for="movie in movies" :key="movie.id>
             <transition name="flip">
               <div class="movie__poster">
                 <!-- conditionally display poster image if it exist else display default image -->
@@ -38,6 +38,7 @@
 <script>
   import axios from 'axios'
   import moment from 'moment'
+  import _ from 'lodash'
 
   
   export default {
@@ -81,6 +82,11 @@
            console.log(newPath)
           return newPath
       },
+    },
+    computed:  {
+      kebabTitle() {
+        return _.kebabCase(this.title);
+      }
     },
     filters: {
       // filter the date object to display month and year
