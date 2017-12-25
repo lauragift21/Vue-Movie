@@ -10,28 +10,27 @@
     </div>
     <!-- Movie Results -->
     <div class="result" v-show="!noMovieFound">
-      <div class="card">
-          <div class="movie" v-for="movie in movies" :key="movie.id>
-            <transition name="flip">
-              <div class="movie__poster">
-                <!-- conditionally display poster image if it exist else display default image -->
-                <img v-if="movie.poster_path !== null" :src="posterPath(movie.poster_path)" class="poster">
-                <img v-if="movie.poster_path == null" src="../assets/noImage.png" height="270px">
+        <a href="/" class="card">
+            <div class="movie" v-for="movie in movies" :key="movie.id" :id="$route.params.id" >
+                <div class="movie__poster">
+                  <!-- conditionally display poster image if it exist else display default image -->
+                  <img v-if="movie.poster_path !== null" :src="posterPath(movie.poster_path)" class="poster">
+                  <img v-if="movie.poster_path == null" src="../assets/noImage.png" height="270px">
+                </div>
+              <div>
+                <h4 class="movie-title">{{ movie.title }}</h4>
+                <p class="movie-date">{{ movie.release_date | formatDate}}</p>            
               </div>
-            </transition>
-            <div>
-              <h4 class="movie-title">{{ movie.title }}</h4>
-              <p class="movie-date">{{ movie.release_date | formatDate}}</p>            
-            </div>
-        </div>
-      </div>
+          </div>
+        </a>
       </div>
     </div>
     <div v-show="noMovieFound">
       <h3 class="no-result">
-        No result found.
+        No results found.
       </h3>
     </div>
+    <router-view></router-view>
   </section> 
 </template>
 

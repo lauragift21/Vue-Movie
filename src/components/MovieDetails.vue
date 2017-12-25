@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<p>Test</p>
-		<h2>{{movie}}</h2>
+		<!-- <h2>{{movie}}</h2> -->
 	</div>
 </template>
 
@@ -12,9 +12,8 @@
 
 	export default {
 		data () {
-			return{
-				movie: 'hello there'
-			}
+			return{}
 		}
+	
 	}
 </script>

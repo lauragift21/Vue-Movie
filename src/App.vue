@@ -24,7 +24,7 @@
       </header>
     </section>
     
-    <transition name="pop" @after-leave="after-leave">
+    <transition name="pop">
       <router-view></router-view>   
     </transition>
 
