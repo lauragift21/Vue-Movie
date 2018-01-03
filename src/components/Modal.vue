@@ -3,6 +3,9 @@
     <div class="modal">
       <div class="modal-content">
         <img :src="modalMovie !== null && `https://res.cloudinary.com/christekh/image/fetch/w_auto,h_500,f_auto/http://image.tmdb.org/t/p/w500/${modalMovie.poster_path}`" alt="">
+        <div class="side-content">
+          <h2>{{ modalMovie.title }} </h2>
+        </div>
       </div>
     </div>
   </div>
