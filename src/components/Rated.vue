@@ -4,7 +4,7 @@
       TOP RATED MOVIES
     </h2>    
     <div class="card">
-      <div class="movie" v-for="rating in ratings" :key="rating.id">
+      <div class="movie" v-for="rating in ratings" :key="rating.id" @click="openModal(rating)"> 
         <div class="movie__poster">
           <img v-if="!noImage"  :src="url + rating.poster_path" alt="" class="poster">
           <img v-if="noImage" src="src/assets/no-image.png" height="2%">  
@@ -19,6 +19,7 @@
         </div>
       </div>
     </div>
+    	<Modal :modalMovie="modalMovie" :posterPath="posterPath" v-show="showModal" :toggleModal="toggleModal"></Modal>
   </div> 
 </template>
 
@@ -26,11 +27,15 @@
   import axios from 'axios'
   import moment from 'moment'
 
+  import Modal from './modal'
+
   export default {
     data() {
         return {
           ratings: [],
           noImage: false,
+          showModal: false,
+          modalMovie: null,
           url: 'http://image.tmdb.org/t/p/w185//'
         }
     },
@@ -53,6 +58,15 @@
            console.log(newPath)
           return newPath
       },
+      // adding modal component to movie
+      openModal(movie) {
+        this.toggleModal()
+        console.log(movie);
+        this.modalMovie = movie;
+      },
+      toggleModal() {
+        this.showModal = !this.showModal
+      }
     },
     filters: {
       formatDate(value) {
@@ -60,7 +74,8 @@
           return moment(String(value)).format('MMM YYYY')
         }
       }
-    }
+    },
+    components: { Modal}
 	}
 </script>
 

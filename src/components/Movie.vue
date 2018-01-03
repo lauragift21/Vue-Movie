@@ -91,6 +91,7 @@ export default {
       console.log(newPath);
       return newPath;
     },
+    // adding modal component to movie
     openModal(movie) {
       this.toggleModal()
       console.log(movie);
