@@ -23,9 +23,9 @@
         </nav>
       </header>
     </section>
-    
+
     <transition name="pop">
-      <router-view></router-view>   
+      <router-view></router-view>
     </transition>
 
   </div>
@@ -41,8 +41,8 @@
     data () {
       return {}
     },
-    components: { 
-      Movie, 
+    components: {
+      Movie,
       Popular,
       Rated
     }
